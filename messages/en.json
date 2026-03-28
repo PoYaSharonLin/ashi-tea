@@ -1,0 +1,227 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong. Please try again.",
+    "back": "Back",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "edit": "Edit",
+    "submit": "Submit",
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "outOfStock": "Out of Stock",
+    "inStock": "In Stock",
+    "currency": "NT$",
+    "required": "Required",
+    "optional": "Optional"
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Teas",
+    "about": "Our Story",
+    "cart": "Cart",
+    "account": "Account",
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "admin": "Admin"
+  },
+  "home": {
+    "hero": {
+      "title": "From the Mountains",
+      "subtitle": "To Your Cup",
+      "description": "Carefully selected Taiwanese high-mountain teas, delivered from the source directly to you. Every brew captures the essence of the mountains.",
+      "cta": "Explore Teas"
+    },
+    "featured": {
+      "title": "Featured Teas",
+      "subtitle": "Seasonal selections at their finest"
+    },
+    "story": {
+      "title": "Our Story",
+      "content": "Ashi Tea was born from a deep love for Taiwanese tea culture. We visit every major tea-growing region, carefully inspecting each leaf, to bring you the purest flavors Taiwan has to offer."
+    }
+  },
+  "products": {
+    "title": "All Teas",
+    "filter": {
+      "all": "All",
+      "looseLeaf": "Loose Leaf",
+      "giftBox": "Gift Box",
+      "teaBag": "Tea Bag",
+      "accessory": "Accessories"
+    },
+    "sort": {
+      "label": "Sort by",
+      "newest": "Newest",
+      "priceAsc": "Price: Low to High",
+      "priceDesc": "Price: High to Low"
+    },
+    "addToCart": "Add to Cart",
+    "selectVariant": "Select a variant",
+    "quantity": "Quantity",
+    "variants": "Options",
+    "description": "Description",
+    "shipping": "Shipping",
+    "shippingInfo": "Free shipping on orders over NT$1,200. Standard delivery 3–5 business days.",
+    "noProducts": "No products available",
+    "compareAt": "Was",
+    "stock": "Stock"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "emptyDescription": "Discover our selection of fine Taiwanese teas.",
+    "continueShopping": "Continue Shopping",
+    "item": "Item",
+    "price": "Price",
+    "quantity": "Qty",
+    "subtotal": "Subtotal",
+    "remove": "Remove",
+    "orderSummary": "Order Summary",
+    "subtotalLabel": "Subtotal",
+    "shippingFee": "Shipping",
+    "shippingFreeNote": "(free over NT$1,200)",
+    "shippingTBD": "Calculated at checkout",
+    "total": "Total",
+    "checkout": "Proceed to Checkout",
+    "updateQuantity": "Update"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "steps": {
+      "info": "Contact Info",
+      "shipping": "Shipping",
+      "payment": "Payment"
+    },
+    "recipient": {
+      "title": "Contact Information",
+      "name": "Full Name",
+      "namePlaceholder": "Enter your full name",
+      "phone": "Phone Number",
+      "phonePlaceholder": "09XXXXXXXX",
+      "email": "Email",
+      "emailPlaceholder": "example@email.com"
+    },
+    "shipping": {
+      "title": "Shipping Method",
+      "sevenEleven": "7-Eleven Pickup",
+      "sevenElevenDesc": "Pick up within 3 days of arrival. NT$60 shipping fee.",
+      "familyMart": "FamilyMart Pickup",
+      "familyMartDesc": "Pick up within 3 days of arrival. NT$60 shipping fee.",
+      "homeDelivery": "Home Delivery",
+      "homeDeliveryDesc": "3–5 business days. NT$100 (free over NT$1,200).",
+      "storeSelection": "Select Store",
+      "storeSelectionButton": "Choose a Store",
+      "selectedStore": "Selected Store",
+      "address": "Delivery Address",
+      "addressPlaceholder": "Enter your full address"
+    },
+    "payment": {
+      "title": "Payment Method",
+      "credit": "Credit Card",
+      "linePay": "LINE Pay",
+      "applePay": "Apple Pay",
+      "note": "Payment is securely processed by NewebPay. We never store your card details."
+    },
+    "note": {
+      "label": "Order Notes",
+      "placeholder": "Any special requests? (optional)"
+    },
+    "placeOrder": "Place Order",
+    "processing": "Processing..."
+  },
+  "orderConfirmation": {
+    "title": "Order Confirmed!",
+    "description": "Thank you for your order. We've received it and will begin processing soon.",
+    "orderNumber": "Order Number",
+    "emailSent": "A confirmation email has been sent to your inbox.",
+    "viewOrder": "View Order",
+    "continueShopping": "Continue Shopping"
+  },
+  "account": {
+    "title": "My Account",
+    "welcome": "Welcome, {name}!",
+    "profile": {
+      "title": "Profile",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "updateSuccess": "Profile updated successfully"
+    },
+    "orders": {
+      "title": "My Orders",
+      "empty": "You haven't placed any orders yet.",
+      "orderNumber": "Order #",
+      "date": "Date",
+      "status": "Status",
+      "total": "Total",
+      "detail": "View Details"
+    }
+  },
+  "orderStatus": {
+    "pending": "Pending Payment",
+    "paid": "Paid",
+    "processing": "Processing",
+    "shipped": "Shipped",
+    "delivered": "Delivered",
+    "cancelled": "Cancelled",
+    "refunded": "Refunded"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Sign In",
+      "subtitle": "Welcome back. Sign in to your account.",
+      "email": "Email",
+      "password": "Password",
+      "forgotPassword": "Forgot password?",
+      "signInButton": "Sign In",
+      "noAccount": "Don't have an account?",
+      "signUpLink": "Sign up",
+      "orContinueWith": "Or continue with",
+      "googleSignIn": "Sign in with Google"
+    },
+    "signUp": {
+      "title": "Create Account",
+      "subtitle": "Join Ashi Tea and explore the world of Taiwanese tea.",
+      "name": "Name",
+      "email": "Email",
+      "password": "Password",
+      "passwordConfirm": "Confirm Password",
+      "signUpButton": "Create Account",
+      "hasAccount": "Already have an account?",
+      "signInLink": "Sign in",
+      "orContinueWith": "Or continue with",
+      "googleSignUp": "Sign up with Google",
+      "termsAgreement": "By creating an account, you agree to our Terms of Service and Privacy Policy."
+    },
+    "signOut": {
+      "title": "Sign out?",
+      "button": "Sign Out",
+      "cancel": "Cancel"
+    }
+  },
+  "footer": {
+    "brand": "Ashi Tea",
+    "tagline": "From the mountains, to your cup.",
+    "links": {
+      "about": "Our Story",
+      "products": "Our Teas",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "shipping": "Shipping Info",
+      "returns": "Returns"
+    },
+    "language": "Language",
+    "copyright": "© {year} Ashi Tea. All rights reserved."
+  },
+  "errors": {
+    "notFound": "Page not found",
+    "unauthorized": "Please sign in to continue",
+    "serverError": "Server error. Please try again later.",
+    "productNotFound": "Product not found"
+  }
+}

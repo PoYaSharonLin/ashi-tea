@@ -1,0 +1,227 @@
+{
+  "common": {
+    "loading": "載入中...",
+    "error": "發生錯誤，請稍後再試",
+    "back": "返回",
+    "save": "儲存",
+    "cancel": "取消",
+    "confirm": "確認",
+    "delete": "刪除",
+    "edit": "編輯",
+    "submit": "送出",
+    "learnMore": "了解更多",
+    "viewAll": "查看全部",
+    "outOfStock": "已售完",
+    "inStock": "有庫存",
+    "currency": "NT$",
+    "required": "必填",
+    "optional": "選填"
+  },
+  "nav": {
+    "home": "首頁",
+    "products": "茶品",
+    "about": "品牌故事",
+    "cart": "購物車",
+    "account": "會員中心",
+    "signIn": "登入",
+    "signOut": "登出",
+    "admin": "後台管理"
+  },
+  "home": {
+    "hero": {
+      "title": "源自山林",
+      "subtitle": "入杯即詩",
+      "description": "嚴選台灣高山茶葉，從產地直送到您手中，每一泡都是山林的芬芳。",
+      "cta": "探索茶品"
+    },
+    "featured": {
+      "title": "精選茶品",
+      "subtitle": "嚴選當季好茶"
+    },
+    "story": {
+      "title": "品牌故事",
+      "content": "Ashi Tea 阿詩茶，源自對台灣茶葉的深厚情感。我們走訪各大茶產區，嚴格把關每一片茶葉的品質，只為將最純粹的台灣茶香帶給您。"
+    }
+  },
+  "products": {
+    "title": "全部茶品",
+    "filter": {
+      "all": "全部",
+      "looseLeaf": "散茶",
+      "giftBox": "禮盒",
+      "teaBag": "茶包",
+      "accessory": "茶具"
+    },
+    "sort": {
+      "label": "排序",
+      "newest": "最新上架",
+      "priceAsc": "價格低到高",
+      "priceDesc": "價格高到低"
+    },
+    "addToCart": "加入購物車",
+    "selectVariant": "請選擇規格",
+    "quantity": "數量",
+    "variants": "規格選擇",
+    "description": "商品描述",
+    "shipping": "運送說明",
+    "shippingInfo": "滿 $1,200 免運費，一般宅配 3-5 個工作日到貨。",
+    "noProducts": "目前沒有商品",
+    "compareAt": "原價",
+    "stock": "庫存"
+  },
+  "cart": {
+    "title": "購物車",
+    "empty": "您的購物車是空的",
+    "emptyDescription": "快去挑選您喜愛的茶品吧！",
+    "continueShopping": "繼續購物",
+    "item": "商品",
+    "price": "單價",
+    "quantity": "數量",
+    "subtotal": "小計",
+    "remove": "移除",
+    "orderSummary": "訂單摘要",
+    "subtotalLabel": "商品小計",
+    "shippingFee": "運費",
+    "shippingFreeNote": "（滿 $1,200 免運費）",
+    "shippingTBD": "結帳時計算",
+    "total": "合計",
+    "checkout": "前往結帳",
+    "updateQuantity": "更新數量"
+  },
+  "checkout": {
+    "title": "結帳",
+    "steps": {
+      "info": "收件資訊",
+      "shipping": "物流方式",
+      "payment": "付款"
+    },
+    "recipient": {
+      "title": "收件人資訊",
+      "name": "姓名",
+      "namePlaceholder": "請輸入真實姓名",
+      "phone": "手機號碼",
+      "phonePlaceholder": "09XXXXXXXX",
+      "email": "電子信箱",
+      "emailPlaceholder": "example@email.com"
+    },
+    "shipping": {
+      "title": "選擇物流方式",
+      "sevenEleven": "7-11 超商取貨",
+      "sevenElevenDesc": "取貨後 3 天內領取，運費 $60",
+      "familyMart": "全家超商取貨",
+      "familyMartDesc": "取貨後 3 天內領取，運費 $60",
+      "homeDelivery": "宅配到府",
+      "homeDeliveryDesc": "3-5 個工作日，運費 $100（滿 $1,200 免運費）",
+      "storeSelection": "選擇門市",
+      "storeSelectionButton": "選擇取貨門市",
+      "selectedStore": "已選擇門市",
+      "address": "收件地址",
+      "addressPlaceholder": "請輸入完整地址"
+    },
+    "payment": {
+      "title": "付款方式",
+      "credit": "信用卡",
+      "linePay": "LINE Pay",
+      "applePay": "Apple Pay",
+      "note": "付款資訊將由藍新金流安全處理，本站不儲存您的卡號資訊。"
+    },
+    "note": {
+      "label": "訂單備註",
+      "placeholder": "特殊需求或備註（選填）"
+    },
+    "placeOrder": "確認下單",
+    "processing": "處理中..."
+  },
+  "orderConfirmation": {
+    "title": "訂單成立！",
+    "description": "感謝您的訂購，我們已收到您的訂單。",
+    "orderNumber": "訂單編號",
+    "emailSent": "訂單確認信已寄至您的信箱",
+    "viewOrder": "查看訂單",
+    "continueShopping": "繼續購物"
+  },
+  "account": {
+    "title": "會員中心",
+    "welcome": "您好，{name}！",
+    "profile": {
+      "title": "個人資料",
+      "name": "姓名",
+      "email": "電子信箱",
+      "phone": "手機號碼",
+      "updateSuccess": "資料更新成功"
+    },
+    "orders": {
+      "title": "我的訂單",
+      "empty": "目前沒有訂單紀錄",
+      "orderNumber": "訂單編號",
+      "date": "下單日期",
+      "status": "狀態",
+      "total": "金額",
+      "detail": "查看明細"
+    }
+  },
+  "orderStatus": {
+    "pending": "待付款",
+    "paid": "已付款",
+    "processing": "處理中",
+    "shipped": "已出貨",
+    "delivered": "已送達",
+    "cancelled": "已取消",
+    "refunded": "已退款"
+  },
+  "auth": {
+    "signIn": {
+      "title": "登入",
+      "subtitle": "歡迎回來，請登入您的帳戶",
+      "email": "電子信箱",
+      "password": "密碼",
+      "forgotPassword": "忘記密碼？",
+      "signInButton": "登入",
+      "noAccount": "還沒有帳號？",
+      "signUpLink": "立即註冊",
+      "orContinueWith": "或使用以下方式登入",
+      "googleSignIn": "使用 Google 登入"
+    },
+    "signUp": {
+      "title": "建立帳號",
+      "subtitle": "加入 Ashi Tea，探索台灣茶葉之美",
+      "name": "姓名",
+      "email": "電子信箱",
+      "password": "密碼",
+      "passwordConfirm": "確認密碼",
+      "signUpButton": "建立帳號",
+      "hasAccount": "已有帳號？",
+      "signInLink": "立即登入",
+      "orContinueWith": "或使用以下方式註冊",
+      "googleSignUp": "使用 Google 註冊",
+      "termsAgreement": "建立帳號即表示您同意我們的服務條款與隱私政策"
+    },
+    "signOut": {
+      "title": "確定要登出嗎？",
+      "button": "登出",
+      "cancel": "取消"
+    }
+  },
+  "footer": {
+    "brand": "Ashi Tea 阿詩茶",
+    "tagline": "源自山林，入杯即詩。",
+    "links": {
+      "about": "品牌故事",
+      "products": "茶品介紹",
+      "faq": "常見問題",
+      "contact": "聯絡我們",
+      "privacy": "隱私政策",
+      "terms": "服務條款",
+      "shipping": "運送說明",
+      "returns": "退換貨政策"
+    },
+    "language": "語言",
+    "copyright": "© {year} Ashi Tea. All rights reserved."
+  },
+  "errors": {
+    "notFound": "找不到此頁面",
+    "unauthorized": "請先登入",
+    "serverError": "伺服器錯誤，請稍後再試",
+    "productNotFound": "找不到此商品"
+  }
+}
