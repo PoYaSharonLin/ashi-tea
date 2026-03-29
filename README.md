@@ -65,6 +65,7 @@ npm run dev
 | `npm test` | 執行所有測試（Node 22 built-in runner） |
 | `npm run db:push` | 同步 schema 到資料庫 |
 | `npm run db:studio` | 開啟 Drizzle Studio（資料庫 GUI） |
+| `npm run db:seed` | 匯入範例茶品資料（可重複執行，idempotent） |
 
 ## 專案結構
 
@@ -94,7 +95,8 @@ messages/
 ├── schema.test.ts          # DB schema 結構
 ├── i18n.test.ts            # 翻譯完整性（key parity）
 ├── build.test.ts           # TypeScript + 設定檔
-└── payments.test.ts        # 藍新金流加密邏輯
+├── payments.test.ts        # 藍新金流加密邏輯
+└── phase2.test.ts          # 商品頁面 + 購物車 Server Actions
 ```
 
 ## i18n
@@ -106,7 +108,7 @@ messages/
 ## 開發進度
 
 - [x] Phase 1：基礎建設（DB schema、Auth、i18n、環境變數、設計 Token）
-- [ ] Phase 2：商品頁面（listing、detail、購物車）
+- [x] Phase 2：商品頁面（listing、detail、購物車 UI + Server Actions）
 - [ ] Phase 3：結帳 + 藍新金流
 - [ ] Phase 4：Email 通知（Resend）
 - [ ] Phase 5：會員中心（我的訂單、個人資料）

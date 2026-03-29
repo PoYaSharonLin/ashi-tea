@@ -1,7 +1,7 @@
 export const SEO_CONFIG = {
   description:
-    "Ashi Tea 阿詩茶 — 嚴選台灣高山茶葉，從產地到您手中，每一泡都是山林的芬芳。",
-  fullName: "Ashi Tea 阿詩茶",
+    "Ashi Tea 熹茶 — 嚴選台灣高山茶葉，從產地到您手中，每一泡都是山林的芬芳。",
+  fullName: "Ashi Tea 熹茶",
   name: "Ashi Tea",
   slogan: "源自山林，入杯即詩。",
 };

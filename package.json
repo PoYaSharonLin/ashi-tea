@@ -13,6 +13,7 @@
     "ui": "bunx --bun shadcn@latest add",
     "latest": "bun update --latest && bun check",
     "check": "tsc --noEmit && eslint --cache --fix . && biome check --fix --unsafe . && knip",
+    "db:seed": "node --experimental-strip-types src/db/seed.ts",
     "tests": "node --experimental-strip-types --test .tests/*.test.ts"
   },
   "dependencies": {
