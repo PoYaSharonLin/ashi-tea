@@ -39,7 +39,7 @@ export const testimonials = [
       handle: "@meiling_chen",
       name: "陳美玲",
     },
-    text: "阿詩茶的阿里山烏龍真的超香，茶湯清甜，花香明顯。每次泡茶都是一種享受，已經訂了好幾次了！",
+    text: "熹茶的阿里山烏龍真的超香，茶湯清甜，花香明顯。每次泡茶都是一種享受，已經訂了好幾次了！",
   },
   {
     author: {
