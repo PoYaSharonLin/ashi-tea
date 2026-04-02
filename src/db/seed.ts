@@ -37,7 +37,7 @@ const products = [
     isFeatured: true,
     sortOrder: 1,
     variants: [
-      { name: "150g", nameEn: "150g", sku: "ALISHAN-150", price: "450", compareAtPrice: null, stock: 50 },
+      { name: "150g", nameEn: "150g", sku: "ALISHAN-150", price: "450", compareAtPrice: undefined, stock: 50 },
       { name: "300g", nameEn: "300g", sku: "ALISHAN-300", price: "850", compareAtPrice: "900", stock: 30 },
       { name: "600g 禮盒", nameEn: "600g Gift Box", sku: "ALISHAN-600G", price: "1600", compareAtPrice: "1800", stock: 15 },
     ],
@@ -57,7 +57,7 @@ const products = [
     isFeatured: true,
     sortOrder: 2,
     variants: [
-      { name: "75g", nameEn: "75g", sku: "OB-75", price: "600", compareAtPrice: null, stock: 25 },
+      { name: "75g", nameEn: "75g", sku: "OB-75", price: "600", compareAtPrice: undefined, stock: 25 },
       { name: "150g", nameEn: "150g", sku: "OB-150", price: "1100", compareAtPrice: "1200", stock: 20 },
     ],
   },
@@ -76,7 +76,7 @@ const products = [
     isFeatured: false,
     sortOrder: 3,
     variants: [
-      { name: "100g", nameEn: "100g", sku: "SML-100", price: "350", compareAtPrice: null, stock: 60 },
+      { name: "100g", nameEn: "100g", sku: "SML-100", price: "350", compareAtPrice: undefined, stock: 60 },
       { name: "200g", nameEn: "200g", sku: "SML-200", price: "650", compareAtPrice: "700", stock: 40 },
     ],
   },
@@ -114,7 +114,7 @@ const products = [
     isFeatured: false,
     sortOrder: 5,
     variants: [
-      { name: "20入", nameEn: "20 bags", sku: "TB-ALISHAN-20", price: "280", compareAtPrice: null, stock: 100 },
+      { name: "20入", nameEn: "20 bags", sku: "TB-ALISHAN-20", price: "280", compareAtPrice: undefined, stock: 100 },
       { name: "40入", nameEn: "40 bags", sku: "TB-ALISHAN-40", price: "520", compareAtPrice: "560", stock: 80 },
     ],
   },
