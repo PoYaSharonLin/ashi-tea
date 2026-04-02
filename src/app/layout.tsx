@@ -11,6 +11,7 @@ import { CartProvider } from "~/lib/hooks/use-cart";
 import "~/css/globals.css";
 import { Footer } from "~/ui/components/footer";
 import { Header } from "~/ui/components/header/header";
+import { TeaCursor } from "~/ui/components/tea-cursor";
 import { ThemeProvider } from "~/ui/components/theme-provider";
 import { Toaster } from "~/ui/primitives/sonner";
 
@@ -41,7 +42,7 @@ export default function RootLayout({
           ${geistSans.variable}
           ${geistMono.variable}
           min-h-screen bg-gradient-to-br from-white to-slate-100
-          text-neutral-900 antialiased
+          text-neutral-900 antialiased cursor-none
           selection:bg-primary/80
           dark:from-neutral-950 dark:to-neutral-900 dark:text-neutral-100
         `}
@@ -54,6 +55,7 @@ export default function RootLayout({
         >
           <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
           <CartProvider>
+            <TeaCursor />
             <Header showAuth={true} />
             <main className={`flex min-h-screen flex-col`}>{children}</main>
             <Footer />
