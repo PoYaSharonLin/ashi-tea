@@ -9,18 +9,16 @@ interface ProductsFilterProps {
   labels: {
     all: string;
     looseLeaf: string;
-    giftBox: string;
-    teaBag: string;
-    accessory: string;
+    teaBrick: string;
+    mixedGiftBox: string;
   };
 }
 
 const CATEGORIES = [
   { key: "all", label: (l: ProductsFilterProps["labels"]) => l.all },
   { key: "loose_leaf", label: (l: ProductsFilterProps["labels"]) => l.looseLeaf },
-  { key: "gift_box", label: (l: ProductsFilterProps["labels"]) => l.giftBox },
-  { key: "tea_bag", label: (l: ProductsFilterProps["labels"]) => l.teaBag },
-  { key: "accessory", label: (l: ProductsFilterProps["labels"]) => l.accessory },
+  { key: "tea_brick", label: (l: ProductsFilterProps["labels"]) => l.teaBrick },
+  { key: "mixed_gift_box", label: (l: ProductsFilterProps["labels"]) => l.mixedGiftBox },
 ] as const;
 
 export function ProductsFilter({ labels }: ProductsFilterProps) {

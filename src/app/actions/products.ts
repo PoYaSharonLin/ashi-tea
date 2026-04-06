@@ -29,12 +29,12 @@ export async function getProducts(category?: string): Promise<ProductWithVariant
   if (
     category &&
     category !== "all" &&
-    ["loose_leaf", "gift_box", "tea_bag", "accessory"].includes(category)
+    ["loose_leaf", "tea_brick", "mixed_gift_box", "gift_box", "tea_bag", "accessory"].includes(category)
   ) {
     conditions.push(
       eq(
         productTable.category,
-        category as "loose_leaf" | "gift_box" | "tea_bag" | "accessory",
+        category as "loose_leaf" | "tea_brick" | "mixed_gift_box" | "gift_box" | "tea_bag" | "accessory",
       ),
     );
   }

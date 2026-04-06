@@ -11,6 +11,7 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "allowImportingTsExtensions": true,
     "jsx": "preserve",
     "incremental": true,
     "plugins": [
@@ -30,5 +31,5 @@
     "eslint.config.js",
     "reset.d.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "src/db/seed.ts"]
 }

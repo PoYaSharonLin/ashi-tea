@@ -48,9 +48,8 @@
     "filter": {
       "all": "All",
       "looseLeaf": "Loose Leaf",
-      "giftBox": "Gift Box",
-      "teaBag": "Tea Bag",
-      "accessory": "Accessories"
+      "teaBrick": "Tea Brick",
+      "mixedGiftBox": "Gift Set"
     },
     "sort": {
       "label": "Sort by",

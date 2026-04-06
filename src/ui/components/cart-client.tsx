@@ -204,21 +204,6 @@ export function CartClient({ className }: CartClientProps) {
                 前往結帳
               </Button>
             </Link>
-            <div className="flex items-center justify-between">
-              {isDesktop ? (
-                <SheetClose asChild>
-                  <Link href="/cart">
-                    <Button variant="outline">查看購物車</Button>
-                  </Link>
-                </SheetClose>
-              ) : (
-                <DrawerClose asChild>
-                  <Link href="/cart">
-                    <Button variant="outline">查看購物車</Button>
-                  </Link>
-                </DrawerClose>
-              )}
-            </div>
           </div>
         </div>
       )}

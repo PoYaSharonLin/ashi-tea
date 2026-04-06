@@ -6,6 +6,7 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 const nextConfig: NextConfig = {
   eslint: { ignoreDuringBuilds: true },
   images: {
+    unoptimized: process.env.NODE_ENV === "development",
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
       { hostname: "**.googleusercontent.com", protocol: "https" },

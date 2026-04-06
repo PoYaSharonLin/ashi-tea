@@ -9,10 +9,12 @@ import {
 } from "drizzle-orm/pg-core";
 
 export const productCategoryEnum = pgEnum("product_category", [
-  "loose_leaf",    // 散茶
-  "gift_box",      // 禮盒
-  "tea_bag",       // 茶包
-  "accessory",     // 茶具配件
+  "loose_leaf",      // 散茶
+  "tea_brick",       // 茶磚
+  "mixed_gift_box",  // 綜合禮盒
+  "gift_box",        // 禮盒（保留相容）
+  "tea_bag",         // 茶包（保留相容）
+  "accessory",       // 茶具配件（保留相容）
 ]);
 
 export const productTable = pgTable("product", {

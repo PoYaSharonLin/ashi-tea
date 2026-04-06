@@ -48,9 +48,8 @@
     "filter": {
       "all": "全部",
       "looseLeaf": "散茶",
-      "giftBox": "禮盒",
-      "teaBag": "茶包",
-      "accessory": "茶具"
+      "teaBrick": "茶磚",
+      "mixedGiftBox": "精選禮盒"
     },
     "sort": {
       "label": "排序",

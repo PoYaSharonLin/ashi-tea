@@ -171,9 +171,9 @@ describe("src/app/products/_components/products-filter.tsx", () => {
     assert.ok(src.includes('"use client"'), "ProductsFilter should be a Client Component");
   });
 
-  it("has all 5 category options", () => {
+  it("has all category options", () => {
     const src = readFile("src/app/products/_components/products-filter.tsx");
-    for (const cat of ["all", "loose_leaf", "gift_box", "tea_bag", "accessory"]) {
+    for (const cat of ["all", "loose_leaf", "tea_brick", "mixed_gift_box"]) {
       assert.ok(src.includes(cat), `Missing category: ${cat}`);
     }
   });
@@ -274,7 +274,12 @@ describe("src/db/seed.ts", () => {
 
   it("contains tea product data", () => {
     const src = readFile("src/db/seed.ts");
-    assert.ok(src.includes("烏龍") || src.includes("Oolong"), "Should contain tea product data");
+    assert.ok(
+      src.includes("烏龍") || src.includes("Oolong") ||
+      src.includes("普洱") || src.includes("Pu") ||
+      src.includes("紅茶") || src.includes("Black Tea"),
+      "Should contain tea product data"
+    );
   });
 
   it("uses productTable and productVariantTable", () => {

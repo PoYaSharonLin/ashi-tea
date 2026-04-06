@@ -1,3 +1,8 @@
+/**
+ * Shipping helpers — safe to import in client components.
+ * Crypto-dependent NewebPay utilities live in newebpay.ts (server-only).
+ */
+
 export const FREE_SHIPPING_THRESHOLD = 1200; // NT$
 
 export const SHIPPING_FEES = {
