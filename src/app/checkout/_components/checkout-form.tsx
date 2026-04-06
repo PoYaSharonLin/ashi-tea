@@ -9,8 +9,8 @@ import { Label } from "~/ui/primitives/label";
 import { Separator } from "~/ui/primitives/separator";
 import { useCart } from "~/lib/hooks/use-cart";
 import { createOrder } from "~/app/actions/orders";
-import { calcShippingFee, SHIPPING_FEES, FREE_SHIPPING_THRESHOLD } from "~/lib/newebpay";
-import type { ShippingMethod } from "~/lib/newebpay";
+import { calcShippingFee, SHIPPING_FEES, FREE_SHIPPING_THRESHOLD } from "~/lib/shipping";
+import type { ShippingMethod } from "~/lib/shipping";
 
 const SHIPPING_LABELS: Record<ShippingMethod, string> = {
   home_delivery: "宅配到府",
