@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 
+import { getTranslations } from "next-intl/server";
+
 import { SignOutPageClient } from "~/app/auth/sign-out/[[...signout]]/page.client";
 import { getCurrentUserOrRedirect } from "~/lib/auth";
 import {
@@ -20,15 +22,20 @@ export const metadata: Metadata = {
 export default async function SignOutPage() {
   await getCurrentUserOrRedirect();
 
+  const t = await getTranslations("auth.signOut");
+
+  const translations = {
+    title: t("title"),
+    button: t("button"),
+    cancel: t("cancel"),
+  };
+
   return (
     <Shell>
       <PageHeader>
-        <PageHeaderHeading>Sign out</PageHeaderHeading>
-        <PageHeaderDescription>
-          Are you sure you want to sign out?
-        </PageHeaderDescription>
+        <PageHeaderHeading>{translations.title}</PageHeaderHeading>
       </PageHeader>
-      <SignOutPageClient />
+      <SignOutPageClient translations={translations} />
     </Shell>
   );
 }

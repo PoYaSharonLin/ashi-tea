@@ -176,24 +176,32 @@
       "password": "密碼",
       "forgotPassword": "忘記密碼？",
       "signInButton": "登入",
+      "signingIn": "登入中...",
       "noAccount": "還沒有帳號？",
       "signUpLink": "立即註冊",
       "orContinueWith": "或使用以下方式登入",
-      "googleSignIn": "使用 Google 登入"
+      "googleSignIn": "使用 Google 登入",
+      "errorInvalidCredentials": "電子信箱或密碼錯誤",
+      "errorGoogle": "使用 Google 登入失敗"
     },
     "signUp": {
       "title": "建立帳號",
       "subtitle": "加入 Ashi Tea，探索台灣茶葉之美",
       "name": "姓名",
+      "namePlaceholder": "您的姓名",
       "email": "電子信箱",
+      "emailPlaceholder": "name@example.com",
       "password": "密碼",
       "passwordConfirm": "確認密碼",
       "signUpButton": "建立帳號",
+      "creatingAccount": "建立中...",
       "hasAccount": "已有帳號？",
       "signInLink": "立即登入",
       "orContinueWith": "或使用以下方式註冊",
       "googleSignUp": "使用 Google 註冊",
-      "termsAgreement": "建立帳號即表示您同意我們的服務條款與隱私政策"
+      "termsAgreement": "建立帳號即表示您同意我們的服務條款與隱私政策",
+      "errorRegistration": "註冊失敗，請稍後再試",
+      "errorGoogle": "使用 Google 註冊失敗"
     },
     "signOut": {
       "title": "確定要登出嗎？",

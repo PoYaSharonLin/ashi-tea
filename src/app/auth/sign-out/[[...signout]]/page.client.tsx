@@ -8,7 +8,17 @@ import { useMounted } from "~/lib/hooks/use-mounted";
 import { Button, buttonVariants } from "~/ui/primitives/button";
 import { Skeleton } from "~/ui/primitives/skeleton";
 
-export function SignOutPageClient() {
+type SignOutTranslations = {
+  title: string;
+  button: string;
+  cancel: string;
+};
+
+export function SignOutPageClient({
+  translations: t,
+}: {
+  translations: SignOutTranslations;
+}) {
   const router = useRouter();
   const mounted = useMounted();
 
@@ -34,15 +44,11 @@ export function SignOutPageClient() {
       `}
     >
       <Button onClick={handlePageBack} size="default" variant="outline">
-        Go back
-        <span className="sr-only">Previous page</span>
+        {t.cancel}
       </Button>
       {mounted ? (
         <Button onClick={handleSignOut} size="default" variant="secondary">
-          Log out
-          <span className="sr-only">
-            This action will log you out of your account.
-          </span>
+          {t.button}
         </Button>
       ) : (
         <Skeleton
@@ -51,7 +57,7 @@ export function SignOutPageClient() {
             "bg-muted text-muted-foreground",
           )}
         >
-          Log out
+          {t.button}
         </Skeleton>
       )}
     </div>

@@ -7,7 +7,6 @@ import { useState } from "react";
 
 import { SEO_CONFIG } from "~/app";
 import { signIn, signUp } from "~/lib/auth-client";
-import { GitHubIcon } from "~/ui/components/icons/github";
 import { GoogleIcon } from "~/ui/components/icons/google";
 import { Button } from "~/ui/primitives/button";
 import { Card, CardContent } from "~/ui/primitives/card";
@@ -15,7 +14,29 @@ import { Input } from "~/ui/primitives/input";
 import { Label } from "~/ui/primitives/label";
 import { Separator } from "~/ui/primitives/separator";
 
-export function SignUpPageClient() {
+type SignUpTranslations = {
+  title: string;
+  subtitle: string;
+  name: string;
+  namePlaceholder: string;
+  email: string;
+  emailPlaceholder: string;
+  password: string;
+  signUpButton: string;
+  creatingAccount: string;
+  hasAccount: string;
+  signInLink: string;
+  orContinueWith: string;
+  googleSignUp: string;
+  errorRegistration: string;
+  errorGoogle: string;
+};
+
+export function SignUpPageClient({
+  translations: t,
+}: {
+  translations: SignUpTranslations;
+}) {
   const router = useRouter();
   const [formData, setFormData] = useState({
     email: "",
@@ -48,7 +69,7 @@ export function SignUpPageClient() {
         router.push("/auth/sign-in?registered=true");
       })
       .catch((err: unknown) => {
-        setError("Registration failed. Please try again.");
+        setError(t.errorRegistration);
         console.error(err);
       })
       .finally(() => {
@@ -56,23 +77,12 @@ export function SignUpPageClient() {
       });
   };
 
-  const handleGitHubSignUp = () => {
-    setLoading(true);
-    try {
-      void signIn.social({ provider: "github" });
-    } catch (err) {
-      setError("Failed to sign up with GitHub");
-      console.error(err);
-      setLoading(false);
-    }
-  };
-
   const handleGoogleSignUp = () => {
     setLoading(true);
     try {
       void signIn.social({ provider: "google" });
     } catch (err) {
-      setError("Failed to sign up with Google");
+      setError(t.errorGoogle);
       console.error(err);
       setLoading(false);
     }
@@ -98,7 +108,7 @@ export function SignUpPageClient() {
           fill
           priority
           sizes="(max-width: 768px) 0vw, 50vw"
-          src="https://images.unsplash.com/photo-1719811059181-09032aef07b8?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3"
+          src="https://images.unsplash.com/photo-1567922045116-2a00fae2ed03?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         />
         <div
           className={`
@@ -127,41 +137,39 @@ export function SignUpPageClient() {
               md:text-left
             `}
           >
-            <h2 className="text-3xl font-bold">Create Account</h2>
-            <p className="text-sm text-muted-foreground">
-              Enter your details to create your account
-            </p>
+            <h2 className="text-3xl font-bold">{t.title}</h2>
+            <p className="text-sm text-muted-foreground">{t.subtitle}</p>
           </div>
 
           <Card className="border-none shadow-sm">
             <CardContent className="pt-2">
               <form className="space-y-4" onSubmit={handleSubmit}>
                 <div className="grid gap-2">
-                  <Label htmlFor="name">Full Name</Label>
+                  <Label htmlFor="name">{t.name}</Label>
                   <Input
                     id="name"
                     name="name"
                     onChange={handleChange}
-                    placeholder="John Doe"
+                    placeholder={t.namePlaceholder}
                     required
                     type="text"
                     value={formData.name}
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="email">{t.email}</Label>
                   <Input
                     id="email"
                     name="email"
                     onChange={handleChange}
-                    placeholder="name@example.com"
+                    placeholder={t.emailPlaceholder}
                     required
                     type="email"
                     value={formData.email}
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password">{t.password}</Label>
                   <Input
                     id="password"
                     name="password"
@@ -177,7 +185,7 @@ export function SignUpPageClient() {
                   </div>
                 )}
                 <Button className="w-full" disabled={loading} type="submit">
-                  {loading ? "Creating account..." : "Create account"}
+                  {loading ? t.creatingAccount : t.signUpButton}
                 </Button>
               </form>
               <div className="relative mt-6">
@@ -186,32 +194,23 @@ export function SignUpPageClient() {
                 </div>
                 <div className="relative flex justify-center text-xs uppercase">
                   <span className="bg-background px-2 text-muted-foreground">
-                    Or continue with
+                    {t.orContinueWith}
                   </span>
                 </div>
               </div>
-              <div className="mt-6 grid grid-cols-2 gap-4">
+              <div className="mt-6">
                 <Button
-                  className="flex items-center gap-2"
-                  disabled={loading}
-                  onClick={handleGitHubSignUp}
-                  variant="outline"
-                >
-                  <GitHubIcon className="h-5 w-5" />
-                  GitHub
-                </Button>
-                <Button
-                  className="flex items-center gap-2"
+                  className="flex w-full items-center gap-2"
                   disabled={loading}
                   onClick={handleGoogleSignUp}
                   variant="outline"
                 >
                   <GoogleIcon className="h-5 w-5" />
-                  Google
+                  {t.googleSignUp}
                 </Button>
               </div>
               <div className="mt-6 text-center text-sm text-muted-foreground">
-                Already have an account?{" "}
+                {t.hasAccount}{" "}
                 <Link
                   className={`
                     text-primary underline-offset-4
@@ -219,7 +218,7 @@ export function SignUpPageClient() {
                   `}
                   href="/auth/sign-in"
                 >
-                  Sign in
+                  {t.signInLink}
                 </Link>
               </div>
             </CardContent>
