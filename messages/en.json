@@ -176,24 +176,32 @@
       "password": "Password",
       "forgotPassword": "Forgot password?",
       "signInButton": "Sign In",
+      "signingIn": "Signing in...",
       "noAccount": "Don't have an account?",
       "signUpLink": "Sign up",
       "orContinueWith": "Or continue with",
-      "googleSignIn": "Sign in with Google"
+      "googleSignIn": "Sign in with Google",
+      "errorInvalidCredentials": "Invalid email or password",
+      "errorGoogle": "Failed to sign in with Google"
     },
     "signUp": {
       "title": "Create Account",
       "subtitle": "Join Ashi Tea and explore the world of Taiwanese tea.",
-      "name": "Name",
+      "name": "Full Name",
+      "namePlaceholder": "Your name",
       "email": "Email",
+      "emailPlaceholder": "name@example.com",
       "password": "Password",
       "passwordConfirm": "Confirm Password",
       "signUpButton": "Create Account",
+      "creatingAccount": "Creating account...",
       "hasAccount": "Already have an account?",
       "signInLink": "Sign in",
       "orContinueWith": "Or continue with",
       "googleSignUp": "Sign up with Google",
-      "termsAgreement": "By creating an account, you agree to our Terms of Service and Privacy Policy."
+      "termsAgreement": "By creating an account, you agree to our Terms of Service and Privacy Policy.",
+      "errorRegistration": "Registration failed. Please try again.",
+      "errorGoogle": "Failed to sign up with Google"
     },
     "signOut": {
       "title": "Sign out?",
