@@ -41,6 +41,8 @@ export function AddToCartForm({
 
   const selectedVariant = variants.find((v) => v.id === selectedVariantId);
   const inStock = (selectedVariant?.stock ?? 0) > 0;
+  const price = selectedVariant ? Number(selectedVariant.price) : 0;
+  const compareAtPrice = selectedVariant?.compareAtPrice ? Number(selectedVariant.compareAtPrice) : null;
 
   const handleAddToCart = React.useCallback(async () => {
     if (!selectedVariant) return;
@@ -69,6 +71,18 @@ export function AddToCartForm({
 
   return (
     <div className="flex flex-col gap-6">
+      {/* Price — updates with selected variant */}
+      <div className="flex items-center gap-2">
+        <span className="text-3xl font-bold">
+          NT$ {price.toLocaleString()}
+        </span>
+        {compareAtPrice && (
+          <span className="text-xl text-muted-foreground line-through">
+            NT$ {compareAtPrice.toLocaleString()}
+          </span>
+        )}
+      </div>
+
       {/* Variant selector */}
       <div>
         <p className="mb-2 text-sm font-medium">{labels.variants}</p>

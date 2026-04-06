@@ -4,8 +4,10 @@ import { Heart, ShoppingCart, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
+import { toast } from "sonner";
 
 import { cn } from "~/lib/cn";
+import { useCart } from "~/lib/hooks/use-cart";
 import { Badge } from "~/ui/primitives/badge";
 import { Button } from "~/ui/primitives/button";
 import { Card, CardContent, CardFooter } from "~/ui/primitives/card";
@@ -37,20 +39,26 @@ export function ProductCard({
   variant = "default",
   ...props
 }: ProductCardProps) {
+  const { addItem } = useCart();
   const [isHovered, setIsHovered] = React.useState(false);
   const [isAddingToCart, setIsAddingToCart] = React.useState(false);
   const [isInWishlist, setIsInWishlist] = React.useState(false);
+  const [imgError, setImgError] = React.useState(false);
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
-    if (onAddToCart) {
-      setIsAddingToCart(true);
-      // Simulate API call
-      setTimeout(() => {
-        onAddToCart(product.id);
-        setIsAddingToCart(false);
-      }, 600);
-    }
+    if (!product.inStock) return;
+    setIsAddingToCart(true);
+    addItem({
+      id: product.id,
+      name: product.name,
+      image: product.image,
+      category: product.category,
+      price: product.price,
+    });
+    toast.success(`${product.name} 已加入購物車`);
+    if (onAddToCart) onAddToCart(product.id);
+    setTimeout(() => setIsAddingToCart(false), 600);
   };
 
   const handleAddToWishlist = (e: React.MouseEvent) => {
@@ -112,7 +120,7 @@ export function ProductCard({
           onMouseLeave={() => setIsHovered(false)}
         >
           <div className="relative aspect-square overflow-hidden rounded-t-lg">
-            {product.image && (
+            {product.image && !imgError ? (
               <Image
                 alt={product.name}
                 className={cn(
@@ -120,20 +128,15 @@ export function ProductCard({
                   isHovered && "scale-105"
                 )}
                 fill
+                onError={() => setImgError(true)}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 src={product.image}
               />
+            ) : (
+              <div className="flex h-full w-full items-center justify-center bg-muted">
+                <span className="text-4xl">🍵</span>
+              </div>
             )}
-
-            {/* Category badge */}
-            <Badge
-              className={`
-                absolute top-2 left-2 bg-background/80 backdrop-blur-sm
-              `}
-              variant="outline"
-            >
-              {product.category}
-            </Badge>
 
             {/* Discount badge */}
             {discount > 0 && (

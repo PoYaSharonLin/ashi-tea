@@ -46,9 +46,9 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
   };
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-gradient-to-b from-muted/50 via-muted/25 to-background">
       <main className="flex-1 py-10">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Back link */}
           <Link
             className="mb-6 inline-flex items-center text-sm text-muted-foreground hover:text-foreground"
@@ -90,21 +90,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                 )}
               </div>
 
-              {/* Price */}
-              {cheapestVariant && (
-                <div className="mb-6 flex items-center gap-2">
-                  <span className="text-3xl font-bold">
-                    NT$ {Number(cheapestVariant.price).toLocaleString()}
-                  </span>
-                  {cheapestVariant.compareAtPrice && (
-                    <span className="text-xl text-muted-foreground line-through">
-                      NT$ {Number(cheapestVariant.compareAtPrice).toLocaleString()}
-                    </span>
-                  )}
-                </div>
-              )}
-
-              {/* Add to cart form (client component) */}
+              {/* Add to cart form (client component — includes reactive price) */}
               <AddToCartForm
                 labels={cartFormLabels}
                 productCategory={product.category}
