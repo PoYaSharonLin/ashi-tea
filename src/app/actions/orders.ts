@@ -6,7 +6,7 @@ import { nanoid } from "nanoid";
 
 import { auth } from "~/lib/auth";
 import { db } from "~/db";
-import { orderTable, orderItemTable, productVariantTable } from "~/db/schema";
+import { orderTable, orderItemTable, productTable, productVariantTable } from "~/db/schema";
 import {
   buildMpgFormData,
   calcShippingFee,
@@ -74,15 +74,26 @@ export async function createOrder(
   try {
     resolvedItems = await Promise.all(
       input.items.map(async (item) => {
-        const variant = await db.query.productVariantTable.findFirst({
-          where: eq(productVariantTable.id, item.variantId),
-          with: { product: true },
-        });
+        const [variant] = await db
+          .select()
+          .from(productVariantTable)
+          .where(eq(productVariantTable.id, item.variantId))
+          .limit(1);
 
-        if (!variant?.product) {
+        if (!variant) {
           throw new Error(`variant_not_found:${item.variantId}`);
         }
-        if (!variant.isActive || !variant.product.isActive) {
+
+        const [product] = await db
+          .select()
+          .from(productTable)
+          .where(eq(productTable.id, variant.productId))
+          .limit(1);
+
+        if (!product) {
+          throw new Error(`product_not_found:${variant.productId}`);
+        }
+        if (!variant.isActive || !product.isActive) {
           throw new Error(`product_inactive:${item.variantId}`);
         }
 
@@ -90,7 +101,7 @@ export async function createOrder(
         return {
           productId: variant.productId,
           variantId: variant.id,
-          productName: variant.product.name,
+          productName: product.name,
           variantName: variant.name ?? null,
           unitPrice,
           quantity: item.quantity,

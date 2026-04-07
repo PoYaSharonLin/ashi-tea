@@ -55,10 +55,11 @@ export function CheckoutForm() {
       shippingStoreName: isConvenience ? shippingStoreName : undefined,
       shippingStoreId: isConvenience ? shippingStoreId : undefined,
       note: note || undefined,
-      items: items.map((item) => {
-        const [productId, variantId] = item.id.split("-");
-        return { productId: productId ?? item.id, variantId: variantId ?? item.id, quantity: item.quantity };
-      }),
+      items: items.map((item) => ({
+        productId: item.productId,
+        variantId: item.variantId,
+        quantity: item.quantity,
+      })),
     });
 
     if (!result.ok) {

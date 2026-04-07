@@ -154,7 +154,7 @@ describe("src/app/products/[id]/page.tsx", () => {
   });
 
   it("uses NT$ pricing (not USD)", () => {
-    const src = readFile("src/app/products/[id]/page.tsx");
+    const src = readFile("src/app/products/_components/add-to-cart-form.tsx");
     assert.ok(src.includes("NT$"), "Should display NT$ pricing");
   });
 });

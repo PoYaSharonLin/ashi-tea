@@ -27,6 +27,7 @@ type ProductCardProps = Omit<
     originalPrice?: number;
     price: number;
     rating?: number;
+    variantId?: string;
   };
   variant?: "compact" | "default";
 };
@@ -51,6 +52,8 @@ export function ProductCard({
     setIsAddingToCart(true);
     addItem({
       id: product.id,
+      productId: product.id,
+      variantId: product.variantId ?? product.id,
       name: product.name,
       image: product.image,
       category: product.category,
