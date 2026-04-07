@@ -51,6 +51,8 @@ export function AddToCartForm({
     addItem(
       {
         id: `${productId}-${selectedVariant.id}`,
+        productId,
+        variantId: selectedVariant.id,
         name: `${productName}${selectedVariant.name ? ` - ${selectedVariant.name}` : ""}`,
         image: productImage,
         category: productCategory,

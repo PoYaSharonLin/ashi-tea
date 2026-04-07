@@ -7,8 +7,8 @@
  */
 import { createCipheriv, createDecipheriv, createHash } from "node:crypto";
 
-export { FREE_SHIPPING_THRESHOLD, SHIPPING_FEES, calcShippingFee } from "~/lib/shipping";
-export type { ShippingMethod } from "~/lib/shipping";
+export { FREE_SHIPPING_THRESHOLD, SHIPPING_FEES, calcShippingFee } from "./shipping.ts";
+export type { ShippingMethod } from "./shipping.ts";
 
 /* -------------------------------------------------------------------------- */
 /*                         AES-256-CBC helpers                                */

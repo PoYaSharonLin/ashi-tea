@@ -8,7 +8,9 @@ export interface CartItem {
   image: string;
   name: string;
   price: number;
+  productId: string;
   quantity: number;
+  variantId: string;
 }
 
 interface CartProps {

@@ -44,6 +44,7 @@ async function ProductsGrid({ category }: { category?: string }) {
                 ? Number(cheapestVariant.compareAtPrice)
                 : undefined,
               inStock: product.variants.some((v) => v.stock > 0),
+              variantId: cheapestVariant?.id,
             }}
           />
         );
