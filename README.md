@@ -62,7 +62,7 @@ npm run dev
 |------|------|
 | `npm run dev` | 開發伺服器（Turbopack） |
 | `npm run build` | 生產環境 build |
-| `npm test` | 執行所有測試（Node 22 built-in runner） |
+| `npm run tests` | 執行所有測試（Node 22 built-in runner） |
 | `npm run db:push` | 同步 schema 到資料庫 |
 | `npm run db:studio` | 開啟 Drizzle Studio（資料庫 GUI） |
 | `npm run db:seed` | 匯入範例茶品資料（可重複執行，idempotent） |
@@ -71,32 +71,50 @@ npm run dev
 
 ```
 src/
-├── app/                    # Next.js App Router 頁面
+├── app/
+│   ├── page.tsx                    # 首頁（Hero、茶園介紹、Why Us、CTA）
+│   ├── products/                   # 商品列表 + 詳情頁
+│   ├── cart/                       # 購物車頁
+│   ├── checkout/                   # 結帳頁 + 付款結果頁
+│   │   ├── page.tsx
+│   │   ├── result/page.tsx
+│   │   └── _components/checkout-form.tsx
+│   ├── actions/
+│   │   ├── products.ts             # getProducts / getProductById
+│   │   ├── cart.ts                 # DB 購物車 CRUD
+│   │   └── orders.ts               # createOrder（含藍新 MPG 組裝）
+│   └── api/
+│       └── newebpay/
+│           ├── notify/route.ts     # 藍新背景通知（付款完成回調）
+│           └── return/route.ts     # 藍新前景跳轉（使用者付款後導回）
 ├── db/
 │   └── schema/
-│       ├── users/          # 使用者（Better-Auth）
-│       ├── products/       # 商品 + 變體（克數／口味／禮盒）
-│       ├── orders/         # 訂單 + 訂單明細（含藍新、物流欄位）
-│       ├── cart/           # 購物車
-│       └── uploads/        # 上傳檔案
+│       ├── users/                  # 使用者（Better-Auth + phone 欄位）
+│       ├── products/               # 商品 + 變體（克數／口味／禮盒）
+│       ├── orders/                 # 訂單 + 訂單明細（含藍新、物流欄位）
+│       ├── cart/                   # 購物車
+│       └── uploads/                # 上傳檔案
 ├── i18n/
-│   ├── routing.ts          # 語言路由（zh-TW 無前綴，en → /en/）
-│   └── request.ts          # Server-side next-intl 設定
+│   ├── routing.ts                  # 語言路由（zh-TW 無前綴，en → /en/）
+│   └── request.ts                  # Server-side next-intl 設定
 ├── lib/
-│   └── auth.ts             # Better-Auth（Google + Email/Password）
-└── ui/                     # UI 元件
+│   ├── auth.ts                     # Better-Auth（Google + Email/Password）
+│   ├── newebpay.ts                 # 藍新金流：AES 加解密、TradeSha、MPG
+│   └── shipping.ts                 # 運費計算（宅配/超商，滿 NT$1200 免運）
+└── ui/                             # UI 元件
 
 messages/
-├── zh-TW.json              # 繁體中文（預設）
-└── en.json                 # English
+├── zh-TW.json                      # 繁體中文（預設）
+└── en.json                         # English
 
-.tests/                     # 測試（Node 22 built-in runner）
-├── env.test.ts             # 環境變數格式驗證
-├── schema.test.ts          # DB schema 結構
-├── i18n.test.ts            # 翻譯完整性（key parity）
-├── build.test.ts           # TypeScript + 設定檔
-├── payments.test.ts        # 藍新金流加密邏輯
-└── phase2.test.ts          # 商品頁面 + 購物車 Server Actions
+.tests/                             # 測試（Node 22 built-in runner）
+├── env.test.ts                     # 環境變數格式驗證
+├── schema.test.ts                  # DB schema 結構
+├── i18n.test.ts                    # 翻譯完整性（key parity）
+├── build.test.ts                   # TypeScript + 設定檔
+├── payments.test.ts                # 藍新金流加密邏輯
+├── phase2.test.ts                  # 商品頁面 + 購物車 Server Actions
+└── phase3.test.ts                  # 結帳 + 藍新金流 + 訂單建立
 ```
 
 ## i18n
@@ -109,10 +127,10 @@ messages/
 
 - [x] Phase 1：基礎建設（DB schema、Auth、i18n、環境變數、設計 Token）
 - [x] Phase 2：商品頁面（listing、detail、購物車 UI + Server Actions）
-- [ ] Phase 3：結帳 + 藍新金流
+- [x] Phase 3：結帳 + 藍新金流（168/168 tests pass）
+- [x] Phase 6：首頁設計（Hero、茶園介紹、Why Us、CTA）
 - [ ] Phase 4：Email 通知（Resend）
 - [ ] Phase 5：會員中心（我的訂單、個人資料）
-- [ ] Phase 6：首頁設計
 - [ ] Phase 7：Analytics（GA4 + Meta Pixel）
 
 ## License
