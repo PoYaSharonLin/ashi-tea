@@ -1,42 +1,41 @@
-import { Facebook, Github, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram, Mail } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 
 import { SEO_CONFIG } from "~/app";
 import { cn } from "~/lib/cn";
 import { Button } from "~/ui/primitives/button";
 
-export function Footer({ className }: { className?: string }) {
+export async function Footer({ className }: { className?: string }) {
+  const t = await getTranslations("footer");
+
   return (
     <footer className={cn("border-t bg-background", className)}>
-      <div
-        className={`
-          container mx-auto max-w-7xl px-4 py-12
-          sm:px-6
-          lg:px-8
-        `}
-      >
-        <div
-          className={`
-            grid grid-cols-1 gap-8
-            md:grid-cols-4
-          `}
-        >
+      <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+          {/* Brand */}
           <div className="space-y-4">
             <Link className="flex items-center gap-2" href="/">
-              <span
-                className={`
-                  bg-gradient-to-r from-primary to-primary/70 bg-clip-text
-                  text-xl font-bold tracking-tight text-transparent
-                `}
-              >
+              <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-xl font-bold tracking-tight text-transparent">
                 {SEO_CONFIG.name}
               </span>
             </Link>
-            <p className="text-sm text-muted-foreground">
-              Your one-stop shop for everything tech. Premium products at
-              competitive prices.
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {t("tagline")}
             </p>
-            <div className="flex space-x-4">
+            <div className="space-y-1 text-sm text-muted-foreground">
+              <p>{t("taxId", { id: "60151701" })}</p>
+              <p className="flex items-center gap-1.5">
+                <Mail className="h-3.5 w-3.5" />
+                <a
+                  className="hover:text-foreground"
+                  href="mailto:support@ashi-tea.store"
+                >
+                  support@ashi-tea.store
+                </a>
+              </p>
+            </div>
+            <div className="flex space-x-3">
               <Button
                 className="h-8 w-8 rounded-full"
                 size="icon"
@@ -50,243 +49,122 @@ export function Footer({ className }: { className?: string }) {
                 size="icon"
                 variant="ghost"
               >
-                <Twitter className="h-4 w-4" />
-                <span className="sr-only">Twitter</span>
-              </Button>
-              <Button
-                className="h-8 w-8 rounded-full"
-                size="icon"
-                variant="ghost"
-              >
                 <Instagram className="h-4 w-4" />
                 <span className="sr-only">Instagram</span>
               </Button>
-              <Button
-                className="h-8 w-8 rounded-full"
-                size="icon"
-                variant="ghost"
-              >
-                <Github className="h-4 w-4" />
-                <span className="sr-only">GitHub</span>
-              </Button>
-              <Button
-                className="h-8 w-8 rounded-full"
-                size="icon"
-                variant="ghost"
-              >
-                <Linkedin className="h-4 w-4" />
-                <span className="sr-only">LinkedIn</span>
-              </Button>
             </div>
           </div>
+
+          {/* Shop */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Shop</h3>
+            <h3 className="mb-4 text-sm font-semibold">{t("shopTitle")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
+                  className="text-muted-foreground hover:text-foreground"
                   href="/products"
                 >
-                  All Products
+                  {t("links.products")}
                 </Link>
               </li>
               <li>
                 <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
-                  href="/products?category=audio"
+                  className="text-muted-foreground hover:text-foreground"
+                  href="/cart"
                 >
-                  Audio
+                  {t("links.cart")}
                 </Link>
               </li>
               <li>
                 <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
-                  href="/products?category=wearables"
+                  className="text-muted-foreground hover:text-foreground"
+                  href="/account"
                 >
-                  Wearables
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
-                  href="/products?category=smartphones"
-                >
-                  Smartphones
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
-                  href="/products?category=laptops"
-                >
-                  Laptops
+                  {t("links.account")}
                 </Link>
               </li>
             </ul>
           </div>
+
+          {/* Tea Guide */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Company</h3>
+            <h3 className="mb-4 text-sm font-semibold">
+              {t("teaGuide.title")}
+            </h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
-                  href="/about"
+                  className="text-muted-foreground hover:text-foreground"
+                  href="/tea-storage"
                 >
-                  About Us
+                  {t("links.teaStorage")}
                 </Link>
               </li>
               <li>
                 <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
-                  href="/careers"
+                  className="text-muted-foreground hover:text-foreground"
+                  href="/tea-brewing"
                 >
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
-                  href="/blog"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
-                  href="/press"
-                >
-                  Press
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
-                  href="/contact"
-                >
-                  Contact
+                  {t("links.teaBrewing")}
                 </Link>
               </li>
             </ul>
           </div>
+
+          {/* Customer Service */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Support</h3>
+            <h3 className="mb-4 text-sm font-semibold">
+              {t("supportTitle")}
+            </h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
-                  href="/help"
+                  className="text-muted-foreground hover:text-foreground"
+                  href="/shipping-info"
                 >
-                  Help Center
+                  {t("links.shippingInfo")}
                 </Link>
               </li>
               <li>
                 <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
-                  href="/shipping"
+                  className="text-muted-foreground hover:text-foreground"
+                  href="/refund-policy"
                 >
-                  Shipping & Returns
+                  {t("links.refundPolicy")}
                 </Link>
               </li>
               <li>
                 <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
-                  href="/warranty"
-                >
-                  Warranty
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
-                  href="/privacy"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
+                  className="text-muted-foreground hover:text-foreground"
                   href="/terms"
                 >
-                  Terms of Service
+                  {t("links.terms")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-muted-foreground hover:text-foreground"
+                  href="/privacy"
+                >
+                  {t("links.privacy")}
                 </Link>
               </li>
             </ul>
           </div>
         </div>
+
+        {/* Bottom bar */}
         <div className="mt-12 border-t pt-8">
-          <div
-            className={`
-              flex flex-col items-center justify-between gap-4
-              md:flex-row
-            `}
-          >
+          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p className="text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} {SEO_CONFIG.name}. All rights
-              reserved.
+              {t("copyright", { year: new Date().getFullYear() })}
             </p>
-            <div
-              className={
-                "flex items-center gap-4 text-sm text-muted-foreground"
-              }
-            >
+            <div className="flex items-center gap-4 text-sm text-muted-foreground">
               <Link className="hover:text-foreground" href="/privacy">
-                Privacy
+                {t("links.privacy")}
               </Link>
               <Link className="hover:text-foreground" href="/terms">
-                Terms
-              </Link>
-              <Link className="hover:text-foreground" href="/cookies">
-                Cookies
-              </Link>
-              <Link className="hover:text-foreground" href="/sitemap">
-                Sitemap
+                {t("links.terms")}
               </Link>
             </div>
           </div>

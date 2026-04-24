@@ -211,19 +211,197 @@
   },
   "footer": {
     "brand": "Ashi Tea",
-    "tagline": "From the mountains, to your cup.",
+    "tagline": "From the mountains, to your cup. Carefully selected Taiwanese high-mountain teas, delivered from the source.",
+    "shopTitle": "Shop",
+    "supportTitle": "Customer Service",
     "links": {
-      "about": "Our Story",
-      "products": "Our Teas",
-      "faq": "FAQ",
-      "contact": "Contact",
-      "privacy": "Privacy Policy",
+      "products": "All Teas",
+      "cart": "Cart",
+      "account": "Account",
       "terms": "Terms of Service",
-      "shipping": "Shipping Info",
-      "returns": "Returns"
+      "privacy": "Privacy Policy",
+      "refundPolicy": "Refund Policy",
+      "shippingInfo": "Shipping Information",
+      "teaStorage": "Storage Guide",
+      "teaBrewing": "Brewing Guide"
     },
-    "language": "Language",
+    "teaGuide": {
+      "title": "Tea Guide"
+    },
+    "taxId": "Tax ID: {id}",
     "copyright": "© {year} Ashi Tea. All rights reserved."
+  },
+  "legal": {
+    "terms": {
+      "title": "Terms of Service",
+      "lastUpdated": "Last updated: April 2026",
+      "intro": "Welcome to Ashi Tea. By using this website, you agree to the following terms. Please read them carefully before use.",
+      "sections": {
+        "usage": {
+          "title": "1. Acceptable Use",
+          "content": "This website is intended for personal consumer purchases of tea products. You agree not to use this website for any unlawful purpose or in any way that disrupts its normal operation. All orders must include accurate contact information."
+        },
+        "account": {
+          "title": "2. Account Responsibility",
+          "content": "You are responsible for maintaining the security and confidentiality of your account. All activities under your account are your responsibility. If you suspect unauthorized access, please contact us immediately."
+        },
+        "order": {
+          "title": "3. Orders & Payment",
+          "content": "All prices are listed in New Taiwan Dollars (NT$). We reserve the right to modify product prices; confirmed orders are not affected by subsequent price changes. Payments are securely processed by NewebPay. We never store your credit card details."
+        },
+        "ip": {
+          "title": "4. Intellectual Property",
+          "content": "All content on this website, including text, images, trademarks, logos, and designs, is owned by Ashi Tea or its licensors. Reproduction, modification, or distribution without written consent is prohibited."
+        },
+        "liability": {
+          "title": "5. Limitation of Liability",
+          "content": "This website is provided on an \"as is\" basis. We do not guarantee uninterrupted or error-free service. We are not liable for any indirect or incidental damages arising from your use of the website."
+        },
+        "changes": {
+          "title": "6. Changes to Terms",
+          "content": "We reserve the right to modify these terms at any time. Updated terms take effect upon publication. Continued use of the website constitutes acceptance of the revised terms."
+        },
+        "contact": {
+          "title": "7. Contact Us",
+          "content": "If you have any questions regarding these terms, please contact us by email."
+        }
+      }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "Last updated: April 2026",
+      "intro": "Ashi Tea values your privacy. This policy explains how we collect, use, and protect your personal information.",
+      "sections": {
+        "collection": {
+          "title": "1. Information We Collect",
+          "content": "We may collect the following information when you register, place an order, or contact us: name, email address, phone number, shipping address, and payment-related information (processed by NewebPay — we never store card numbers)."
+        },
+        "usage": {
+          "title": "2. How We Use Your Information",
+          "content": "We use your personal information to: process and deliver your orders, send order confirmations and shipping notifications, provide customer support, and improve website experience. We do not sell your personal information to third parties."
+        },
+        "cookies": {
+          "title": "3. Cookies",
+          "content": "This website uses cookies to maintain your login session and shopping cart. You can manage cookies through your browser settings, but disabling them may affect some features."
+        },
+        "security": {
+          "title": "4. Data Security",
+          "content": "We use industry-standard security measures to protect your personal information, including SSL/TLS encryption and database access controls. However, no method of transmission over the internet is 100% secure."
+        },
+        "rights": {
+          "title": "5. Your Rights",
+          "content": "Under the Personal Data Protection Act, you have the right to access, correct, and delete your personal data. You can update your information through your account settings, or contact us for assistance."
+        },
+        "changes": {
+          "title": "6. Policy Changes",
+          "content": "We reserve the right to modify this privacy policy. For significant changes, we will notify you via email or a website announcement."
+        }
+      }
+    },
+    "refund": {
+      "title": "Refund Policy",
+      "lastUpdated": "Last updated: April 2026",
+      "intro": "We want every customer to be satisfied. If you are unhappy with your purchase, please refer to our refund guidelines below.",
+      "sections": {
+        "eligibility": {
+          "title": "1. Eligibility",
+          "content": "Under Taiwan's Consumer Protection Act, you have a 7-day review period after receiving your order. To qualify for a return, items must remain unopened and in original packaging. Opened food products (tea) cannot be returned."
+        },
+        "process": {
+          "title": "2. Refund Process",
+          "content": "Contact us via email with your order number and reason for return. Once confirmed, we will provide return shipping instructions. After receiving and inspecting the returned item, we will process the refund within 7 business days."
+        },
+        "refundMethod": {
+          "title": "3. Refund Method",
+          "content": "Refunds are returned to your original payment method (credit card reversal or LINE Pay refund). Actual processing time depends on your bank or payment provider, typically 5 to 14 business days."
+        },
+        "exchange": {
+          "title": "4. Exchanges",
+          "content": "If you receive a defective item or an incorrect order, please contact us within 3 days of delivery with photos. We will arrange a free replacement."
+        },
+        "exceptions": {
+          "title": "5. Non-Refundable Items",
+          "content": "The following are not eligible for refund: opened food products, items past the 7-day review period, products not purchased from this website, or items damaged due to customer handling."
+        }
+      }
+    },
+    "shipping": {
+      "title": "Shipping Information",
+      "lastUpdated": "Last updated: April 2026",
+      "intro": "Thank you for choosing Ashi Tea! Here is everything you need to know about our shipping and delivery.",
+      "sections": {
+        "processing": {
+          "title": "1. Processing Time",
+          "content": "Orders are shipped within 1 to 2 business days after payment confirmation (excluding holidays). During peak seasons or promotional periods, processing may take longer — we will announce any delays in advance."
+        },
+        "methods": {
+          "title": "2. Delivery Methods",
+          "content": "Home Delivery: Delivered by our logistics partner, arriving in 3 to 5 business days. Convenience Store Pickup (7-Eleven / FamilyMart): Arrives at the store in 3 to 5 business days. Please pick up within 7 days of arrival."
+        },
+        "fees": {
+          "title": "3. Shipping Fees",
+          "content": "Home delivery: NT$100. Convenience store pickup: NT$60. Free shipping on orders over NT$1,200 (home delivery only). Currently, we only ship within Taiwan (main island)."
+        },
+        "tracking": {
+          "title": "4. Order Tracking",
+          "content": "A shipping notification with a tracking number will be sent to your email once your order ships. You can also check delivery status in your account dashboard."
+        },
+        "notes": {
+          "title": "5. Important Notes",
+          "content": "Please ensure your shipping information is correct. Re-delivery fees due to incorrect information are the customer's responsibility. Delivery may be delayed due to natural disasters or force majeure events."
+        }
+      }
+    },
+    "teaStorage": {
+      "title": "Storage Guide",
+      "lastUpdated": "Last updated: April 2026",
+      "intro": "Proper storage keeps your tea fresh and flavorful. Here are our recommendations.",
+      "sections": {
+        "environment": {
+          "title": "1. Storage Environment",
+          "content": "Store in a cool, dry place away from direct sunlight and moisture. Ideal conditions are 20–25°C with relative humidity below 60%."
+        },
+        "sealing": {
+          "title": "2. Keep It Sealed",
+          "content": "After opening, transfer tea leaves to an airtight container or resealable bag, squeezing out excess air. Avoid transparent containers to prevent light exposure."
+        },
+        "avoidOdor": {
+          "title": "3. Avoid Strong Odors",
+          "content": "Tea leaves easily absorb surrounding aromas. Do not store near coffee, spices, or other strongly scented items."
+        },
+        "bestBefore": {
+          "title": "4. Best Before",
+          "content": "Once opened, consume within 3 months for the best flavor. Unopened tea stored under proper conditions can last 12 to 18 months."
+        }
+      }
+    },
+    "teaBrewing": {
+      "title": "Brewing Guide",
+      "lastUpdated": "Last updated: April 2026",
+      "intro": "Great tea deserves the right brewing method. Follow these steps to enjoy the fullest flavor.",
+      "sections": {
+        "preparation": {
+          "title": "1. Warm the Teaware",
+          "content": "Rinse the teapot and cups with hot water before brewing. This helps the teaware heat evenly and enhances aroma release."
+        },
+        "dosage": {
+          "title": "2. Measure the Tea",
+          "content": "Use about 5g of tea leaves (roughly one teaspoon) per pot or gaiwan. Adjust to taste for a stronger or lighter brew."
+        },
+        "water": {
+          "title": "3. Water Temperature",
+          "content": "Use water heated to 95°C. Filtered or spring water produces the best results — avoid chlorinated tap water."
+        },
+        "steeping": {
+          "title": "4. Steeping Time",
+          "content": "Steep the first infusion for 45 seconds, then add 15 seconds for each subsequent brew. Fine tea can be re-steeped 4–6 times, each infusion revealing different nuances."
+        },
+        "tasting": {
+          "title": "5. Tasting",
+          "content": "First, appreciate the aroma. Then take small sips, letting the tea linger in your mouth to experience the layers of flavor and the sweet aftertaste."
+        }
+      }
+    }
   },
   "errors": {
     "notFound": "Page not found",

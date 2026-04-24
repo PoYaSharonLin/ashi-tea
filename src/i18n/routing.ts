@@ -22,6 +22,12 @@ export const routing = defineRouting({
     "/account/orders/[id]": "/account/orders/[id]",
     "/auth/sign-in": "/auth/sign-in",
     "/auth/sign-up": "/auth/sign-up",
+    "/terms": "/terms",
+    "/privacy": "/privacy",
+    "/refund-policy": "/refund-policy",
+    "/shipping-info": "/shipping-info",
+    "/tea-storage": "/tea-storage",
+    "/tea-brewing": "/tea-brewing",
   },
 });
 

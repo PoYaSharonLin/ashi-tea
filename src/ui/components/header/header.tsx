@@ -26,23 +26,10 @@ export function Header({ showAuth = true }: HeaderProps) {
   const { isPending, user } = useCurrentUser();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const mainNavigation = [
-    { href: "/", name: "Home" },
-    { href: "/products", name: "Products" },
+  const navigation = [
+    { href: "/", name: "首頁" },
+    { href: "/products", name: "選購茶品" },
   ];
-
-  const dashboardNavigation = [
-    { href: "/dashboard/stats", name: "Stats" },
-    { href: "/dashboard/profile", name: "Profile" },
-    { href: "/dashboard/settings", name: "Settings" },
-    { href: "/dashboard/uploads", name: "Uploads" },
-    { href: "/admin/summary", name: "Admin" },
-  ];
-
-  const isDashboard =
-    user &&
-    (pathname.startsWith("/dashboard") || pathname.startsWith("/admin")); // todo: remove /admin when admin role is implemented
-  const navigation = isDashboard ? dashboardNavigation : mainNavigation;
 
   const renderContent = () => (
     <header
@@ -64,11 +51,10 @@ export function Header({ showAuth = true }: HeaderProps) {
               <span
                 className={cn(
                   "text-xl font-bold",
-                  !isDashboard &&
-                    `
-                      bg-gradient-to-r from-primary to-primary/70 bg-clip-text
-                      tracking-tight text-transparent
-                    `,
+                  `
+                    bg-gradient-to-r from-primary to-primary/70 bg-clip-text
+                    tracking-tight text-transparent
+                  `,
                 )}
               >
                 {SEO_CONFIG.name}
@@ -116,12 +102,11 @@ export function Header({ showAuth = true }: HeaderProps) {
           </div>
 
           <div className="flex items-center gap-4">
-            {!isDashboard &&
-              (isPending ? (
-                <Skeleton className={`h-9 w-9 rounded-full`} />
-              ) : (
-                <Cart />
-              ))}
+            {isPending ? (
+              <Skeleton className="h-9 w-9 rounded-full" />
+            ) : (
+              <Cart />
+            )}
 
             {isPending ? (
               <Skeleton className="h-9 w-9 rounded-full" />
@@ -130,15 +115,9 @@ export function Header({ showAuth = true }: HeaderProps) {
             )}
 
             {showAuth && (
-              <div
-                className={`
-                  hidden
-                  md:block
-                `}
-              >
+              <div className="hidden md:block">
                 {user ? (
                   <HeaderUserDropdown
-                    isDashboard={!!isDashboard}
                     userEmail={user.email}
                     userImage={user.image}
                     userName={user.name}
@@ -149,23 +128,22 @@ export function Header({ showAuth = true }: HeaderProps) {
                   <div className="flex items-center gap-2">
                     <Link href="/auth/sign-in">
                       <Button size="sm" variant="ghost">
-                        Log in
+                        登入
                       </Button>
                     </Link>
                     <Link href="/auth/sign-up">
-                      <Button size="sm">Sign up</Button>
+                      <Button size="sm">註冊</Button>
                     </Link>
                   </div>
                 )}
               </div>
             )}
 
-            {!isDashboard &&
-              (isPending ? (
-                <Skeleton className={`h-9 w-9 rounded-full`} />
-              ) : (
-                <ThemeToggle />
-              ))}
+            {isPending ? (
+              <Skeleton className="h-9 w-9 rounded-full" />
+            ) : (
+              <ThemeToggle />
+            )}
 
             {/* Mobile menu button */}
             <Button

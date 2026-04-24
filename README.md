@@ -75,14 +75,25 @@ src/
 │   ├── page.tsx                    # 首頁（Hero、茶園介紹、Why Us、CTA）
 │   ├── products/                   # 商品列表 + 詳情頁
 │   ├── cart/                       # 購物車頁
+│   ├── terms/                      # 服務條款
+│   ├── privacy/                    # 隱私權政策
+│   ├── refund-policy/              # 退款政策
+│   ├── shipping-info/              # 出貨說明
 │   ├── checkout/                   # 結帳頁 + 付款結果頁
 │   │   ├── page.tsx
 │   │   ├── result/page.tsx
 │   │   └── _components/checkout-form.tsx
+│   ├── account/                    # 會員中心
+│   │   ├── layout.tsx
+│   │   ├── page.tsx                # redirect → /account/orders
+│   │   ├── orders/                 # 訂單列表 + 訂單詳情
+│   │   ├── profile/                # 個人資料（ProfileForm）
+│   │   └── _components/account-nav.tsx
 │   ├── actions/
 │   │   ├── products.ts             # getProducts / getProductById
 │   │   ├── cart.ts                 # DB 購物車 CRUD
-│   │   └── orders.ts               # createOrder（含藍新 MPG 組裝）
+│   │   ├── orders.ts               # createOrder + getUserOrders
+│   │   └── user.ts                 # updateProfile
 │   └── api/
 │       └── newebpay/
 │           ├── notify/route.ts     # 藍新背景通知（付款完成回調）
@@ -114,7 +125,9 @@ messages/
 ├── build.test.ts                   # TypeScript + 設定檔
 ├── payments.test.ts                # 藍新金流加密邏輯
 ├── phase2.test.ts                  # 商品頁面 + 購物車 Server Actions
-└── phase3.test.ts                  # 結帳 + 藍新金流 + 訂單建立
+├── phase3.test.ts                  # 結帳 + 藍新金流 + 訂單建立
+├── phase5.test.ts                  # 會員中心（訂單列表、個人資料）
+└── phase8.test.ts                  # 消費者權益頁面 + Footer
 ```
 
 ## i18n
@@ -128,9 +141,10 @@ messages/
 - [x] Phase 1：基礎建設（DB schema、Auth、i18n、環境變數、設計 Token）
 - [x] Phase 2：商品頁面（listing、detail、購物車 UI + Server Actions）
 - [x] Phase 3：結帳 + 藍新金流（168/168 tests pass）
+- [x] Phase 5：會員中心（我的訂單、個人資料）
 - [x] Phase 6：首頁設計（Hero、茶園介紹、Why Us、CTA）
+- [x] Phase 8：消費者權益（服務條款、隱私權政策、退款政策、出貨說明）+ Footer（236/236 tests pass）
 - [ ] Phase 4：Email 通知（Resend）
-- [ ] Phase 5：會員中心（我的訂單、個人資料）
 - [ ] Phase 7：Analytics（GA4 + Meta Pixel）
 
 ## License

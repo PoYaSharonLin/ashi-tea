@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "next dev --turbopack",
+    "dev": "kill -9 $(ss -tulnp | grep ':3000' | grep -oP 'pid=\\K[0-9]+') 2>/dev/null; next dev --turbopack",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "db:auth": "bun src/lib/auth-db.ts",

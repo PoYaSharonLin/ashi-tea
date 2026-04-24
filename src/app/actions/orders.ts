@@ -204,3 +204,18 @@ export async function getOrderByNumber(orderNumber: string) {
     with: { items: true },
   });
 }
+
+/* -------------------------------------------------------------------------- */
+/*                           getUserOrders                                    */
+/* -------------------------------------------------------------------------- */
+
+export async function getUserOrders() {
+  const session = await auth.api.getSession({ headers: await headers() });
+  if (!session?.user) return [];
+
+  return db.query.orderTable.findMany({
+    where: eq(orderTable.userId, session.user.id),
+    orderBy: (table, { desc }) => [desc(table.createdAt)],
+    with: { items: true },
+  });
+}
