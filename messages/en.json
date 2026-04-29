@@ -388,13 +388,13 @@
           "title": "2. Measure the Tea",
           "content": "Use about 5g of tea leaves (roughly one teaspoon) per pot or gaiwan. Adjust to taste for a stronger or lighter brew."
         },
-        "water": {
-          "title": "3. Water Temperature",
-          "content": "Use water heated to 95°C. Filtered or spring water produces the best results — avoid chlorinated tap water."
+        "blackTea": {
+          "title": "3. Black Tea Brewing",
+          "content": "Water temperature: 90–95°C. Steep the first infusion for 45 seconds, then add 15 seconds for each subsequent brew. Filtered or spring water produces the best results — avoid chlorinated tap water."
         },
-        "steeping": {
-          "title": "4. Steeping Time",
-          "content": "Steep the first infusion for 45 seconds, then add 15 seconds for each subsequent brew. Fine tea can be re-steeped 4–6 times, each infusion revealing different nuances."
+        "puer": {
+          "title": "4. Pu'er Tea Brewing",
+          "content": "Water temperature: 100°C (boiling). Steep the first infusion for 1 minute, then add 20 seconds for each subsequent brew. Filtered or spring water produces the best results — avoid chlorinated tap water."
         },
         "tasting": {
           "title": "5. Tasting",

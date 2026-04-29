@@ -5,8 +5,8 @@ import { LegalPage } from "~/ui/components/legal-page";
 const SECTION_KEYS = [
   "preparation",
   "dosage",
-  "water",
-  "steeping",
+  "blackTea",
+  "puer",
   "tasting",
 ] as const;
 

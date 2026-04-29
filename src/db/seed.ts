@@ -59,7 +59,7 @@ const products: Array<{
     isFeatured: true,
     sortOrder: 1,
     variants: [
-      { name: "75g", nameEn: "75g", sku: "HONEYBLACKTEA-150", price: "1000", compareAtPrice: null, stock: 50 },
+      { name: "75g", nameEn: "75g", sku: "HONEYBLACKTEA-150", price: "600", compareAtPrice: null, stock: 50 },
       { name: "150g 禮盒", nameEn: "150g Giftbox", sku: "HONEYBLACKTEA-300", price: "2300", compareAtPrice: null, stock: 30 },
     ],
   },
@@ -71,9 +71,7 @@ const products: Array<{
     descriptionEn:
       "Crafted from Yunnan's prized large-leaf sun-dried maocha, this Pu'er yields a deep, luminous ruby-red liquor. Rich and full-bodied in flavor, it unfolds with intricate layers and a lingering, profound sweetness.",
     category: "tea_brick" as const,
-    images: [
-      "https://images.unsplash.com/photo-1628153915053-9a493ee1a27e?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    ],
+    images: ["/yunnan-puerh.png"],
     isActive: true,
     isFeatured: true,
     sortOrder: 2,
@@ -90,9 +88,7 @@ const products: Array<{
     descriptionEn:
       "Produced from the five ancient villages of Bingdao—Old Village, Land Boundary, Southern Slope, Damwai, and Nuowu—this Pu'er tea carries an intensely fragrant dry-leaf aroma. When brewed, it reveals elegant honey notes, graceful orchid fragrance, and a subtle, crystal-like rock sugar sweetness.",
     category: "tea_brick" as const,
-    images: [
-      "https://images.unsplash.com/photo-1577016029703-cc22a7c0c28c?q=80&w=757&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    ],
+    images: ["/bingdao-puerh.png"],
     isActive: true,
     isFeatured: false,
     sortOrder: 3,

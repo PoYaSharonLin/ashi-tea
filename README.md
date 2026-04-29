@@ -147,6 +147,49 @@ messages/
 - [ ] Phase 4：Email 通知（Resend）
 - [ ] Phase 7：Analytics（GA4 + Meta Pixel）
 
+## 電商規範
+
+### P0 緊急
+
+- [ ] 新增 `src/app/sitemap.ts`
+- [ ] 新增 `src/app/robots.ts`
+- [ ] 商品頁加入 `generateMetadata`（title、description 隨商品變動）— `src/app/products/[id]/page.tsx`
+- [ ] `<html lang>` 依 locale 動態設定（zh-TW / en）— `src/app/layout.tsx`
+- [ ] 新增 `src/app/not-found.tsx` 和 `src/app/error.tsx`（品牌化錯誤頁）
+- [ ] 下單時扣減庫存，防止超賣 — `src/app/actions/orders.ts`
+- [ ] `product-card.tsx` 的 `"Add to Cart"` / `"Out of Stock"` 改用 i18n
+
+### P1 重要
+
+- [ ] Root layout 加入 Open Graph / Twitter Card meta — `src/app/layout.tsx`
+- [ ] 商品頁加入 JSON-LD Product schema — `src/app/products/[id]/page.tsx`
+- [ ] `cursor-none` 加 `@media (pointer: fine)` 條件，避免影響無障礙使用者 — `src/app/layout.tsx`
+- [ ] 加入「跳至主要內容」Skip-to-Content 連結 — `src/ui/components/header/`
+- [ ] 行動版 header 的「Log in」/「Sign up」改用 i18n — `src/ui/components/header/header.tsx:211,222`
+- [ ] 結帳頁全面 i18n 化（目前全為硬編碼繁中）— `src/app/checkout/_components/checkout-form.tsx`
+- [ ] 建立 `/order-confirmation/[id]` 頁面（routing.ts 已定義但頁面不存在）— `src/i18n/routing.ts:19`
+- [ ] 付款成功頁加入「查看我的訂單」連結（翻譯字串已存在）— `src/app/checkout/result/page.tsx`
+- [ ] 付款失敗後提供重新付款機制（目前原訂單留在 pending）— `src/app/checkout/result/page.tsx`
+
+### P2 建議
+
+- [ ] Footer 社群媒體按鈕加上實際連結（目前點了無反應）— `src/ui/components/footer.tsx:39-55`
+- [ ] 英文版貨幣符號 `$` 改為 `NT$` — `src/ui/components/product-card.tsx:198,202,240,244`
+- [ ] 商品圖片 `alt` 依語言切換（英文版應用 `nameEn`）
+- [ ] 字體改用支援中文的字體，或補充 `latin-ext` subset（目前中文 fallback 到系統字體）— `src/app/layout.tsx:19-26`
+- [ ] 敏感 API 加入速率限制（`/api/newebpay/notify`、`/api/newebpay/return`、auth）
+- [ ] 購物車改為服務端持久化（目前僅 `localStorage`，換裝置即消失）
+
+### P3 優化
+
+- [ ] 新增獨立聯絡頁面 `/contact`
+- [ ] 結帳頁加入付款信任徽章（藍新、Visa、Mastercard）
+- [ ] 購物車 `+`/`-` 按鈕加上 `aria-label` — `src/app/cart/page.tsx`
+- [ ] 購物車 `+`/`-` 按鈕尺寸提升至 44px（WCAG 觸控目標）— `src/app/cart/page.tsx`
+- [ ] 結帳配送選項加入 `role="radio"` / `aria-checked` — `src/app/checkout/_components/checkout-form.tsx`
+- [ ] 商品頁加入麵包屑（Breadcrumbs）— `src/app/products/[id]/page.tsx`
+- [ ] 商品頁加入相關商品推薦區塊
+
 ## License
 
 MIT
