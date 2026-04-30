@@ -11,8 +11,9 @@ interface ProductsPageProps {
 }
 
 async function ProductsGrid({ category }: { category?: string }) {
-  const [t, products] = await Promise.all([
+  const [t, tCommon, products] = await Promise.all([
     getTranslations("products"),
+    getTranslations("common"),
     getProducts(category),
   ]);
 
@@ -34,6 +35,7 @@ async function ProductsGrid({ category }: { category?: string }) {
         return (
           <ProductCard
             key={product.id}
+            labels={{ addToCart: t("addToCart"), outOfStock: tCommon("outOfStock") }}
             product={{
               id: product.id,
               name: product.name,

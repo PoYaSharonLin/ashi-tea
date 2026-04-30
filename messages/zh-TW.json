@@ -405,6 +405,8 @@
   },
   "errors": {
     "notFound": "找不到此頁面",
+    "notFoundDescription": "您要找的頁面可能已移除或從未存在。",
+    "goHome": "回首頁",
     "unauthorized": "請先登入",
     "serverError": "伺服器錯誤，請稍後再試",
     "productNotFound": "找不到此商品"

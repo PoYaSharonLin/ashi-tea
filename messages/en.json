@@ -405,6 +405,8 @@
   },
   "errors": {
     "notFound": "Page not found",
+    "notFoundDescription": "The page you're looking for may have been removed or never existed.",
+    "goHome": "Back to Home",
     "unauthorized": "Please sign in to continue",
     "serverError": "Server error. Please try again later.",
     "productNotFound": "Product not found"

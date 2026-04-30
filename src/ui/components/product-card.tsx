@@ -16,6 +16,7 @@ type ProductCardProps = Omit<
   React.HTMLAttributes<HTMLDivElement>,
   "onError"
 > & {
+  labels?: { addToCart?: string; outOfStock?: string };
   onAddToCart?: (productId: string) => void;
   onAddToWishlist?: (productId: string) => void;
   product: {
@@ -34,12 +35,15 @@ type ProductCardProps = Omit<
 
 export function ProductCard({
   className,
+  labels,
   onAddToCart,
   onAddToWishlist,
   product,
   variant = "default",
   ...props
 }: ProductCardProps) {
+  const addToCartLabel = labels?.addToCart ?? "Add to Cart";
+  const outOfStockLabel = labels?.outOfStock ?? "Out of Stock";
   const { addItem } = useCart();
   const [isHovered, setIsHovered] = React.useState(false);
   const [isAddingToCart, setIsAddingToCart] = React.useState(false);
@@ -227,7 +231,7 @@ export function ProductCard({
                 ) : (
                   <ShoppingCart className="h-4 w-4" />
                 )}
-                Add to Cart
+                {addToCartLabel}
               </Button>
             </CardFooter>
           )}
@@ -262,7 +266,7 @@ export function ProductCard({
                   ) : (
                     <ShoppingCart className="h-4 w-4" />
                   )}
-                  <span className="sr-only">Add to cart</span>
+                  <span className="sr-only">{addToCartLabel}</span>
                 </Button>
               </div>
             </CardFooter>
@@ -276,7 +280,7 @@ export function ProductCard({
               `}
             >
               <Badge className="px-3 py-1 text-sm" variant="destructive">
-                Out of Stock
+                {outOfStockLabel}
               </Badge>
             </div>
           )}

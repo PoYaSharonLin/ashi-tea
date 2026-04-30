@@ -168,9 +168,31 @@ export async function createOrder(
           subtotal: item.subtotal.toString(),
         })),
       );
+
+      // Atomically deduct stock; rollback entire transaction if any variant is sold out
+      for (const item of resolvedItems) {
+        const updated = await tx
+          .update(productVariantTable)
+          .set({ stock: sql`${productVariantTable.stock} - ${item.quantity}` })
+          .where(
+            and(
+              eq(productVariantTable.id, item.variantId),
+              gte(productVariantTable.stock, item.quantity),
+            ),
+          )
+          .returning({ id: productVariantTable.id });
+
+        if (updated.length === 0) {
+          throw new Error(`insufficient_stock:${item.variantId}`);
+        }
+      }
     });
   } catch (err) {
     console.error("createOrder DB error:", err);
+    const msg = err instanceof Error ? err.message : "db_error";
+    if (msg.startsWith("insufficient_stock:")) {
+      return { ok: false, error: "insufficient_stock" };
+    }
     return { ok: false, error: "db_error" };
   }
 

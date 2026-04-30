@@ -1,14 +1,28 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 
 import { getProductById } from "~/app/actions/products";
+import { SEO_CONFIG } from "~/app";
 import { Separator } from "~/ui/primitives/separator";
 import { AddToCartForm } from "../_components/add-to-cart-form";
 
 interface ProductDetailPageProps {
   params: Promise<{ id: string }>;
+}
+
+export async function generateMetadata({ params }: ProductDetailPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const product = await getProductById(id);
+  if (!product) {
+    return { title: `商品不存在 | ${SEO_CONFIG.fullName}` };
+  }
+  return {
+    title: `${product.name} | ${SEO_CONFIG.fullName}`,
+    description: product.description?.slice(0, 160) ?? `${product.name} — ${SEO_CONFIG.description}`,
+  };
 }
 
 export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
